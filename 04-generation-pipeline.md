@@ -1,4 +1,4 @@
-# 03 — Generation Pipeline
+# 04 — Generation Pipeline
 
 The generation pipeline takes the retrieved context and produces a grounded, cited answer. It uses a multi-agent architecture where each agent has a specific role, followed by an automated citation validation loop.
 
@@ -21,7 +21,7 @@ The Gateway runs three specialized LLM agents, each with distinct system prompts
 
 ### Agent 1: Query Router
 
-Routes incoming questions to the appropriate handler. Covered in detail in [02 — Retrieval Pipeline](02-retrieval-pipeline.md).
+Routes incoming questions to the appropriate handler. Covered in detail in [02 — Retrieval Pipeline](03-retrieval-pipeline.md).
 
 | Setting | Value |
 |---------|-------|
@@ -141,4 +141,4 @@ Returns Server-Sent Events (SSE) as the answer is generated:
 | Generic fallback message | Honest "I don't know" is better than confident but wrong |
 | Streaming sources first | Client can render source metadata while waiting for the answer |
 
-**Next:** [04 — Application](04-application.md) covers the project structure, setup, and code organization.
+**Next:** [04 — Application](05-application.md) covers the project structure, setup, and code organization.

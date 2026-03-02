@@ -1,4 +1,4 @@
-# 05 — Data Flow
+# 06 — Data Flow
 
 This document traces the complete data flow for the two primary operations: **ingestion** (uploading a document) and **chat** (asking a question). It also covers evaluation metrics and migration history.
 
@@ -150,4 +150,4 @@ The system evolved from a Python monolith to the current two-service architectur
 | Single-provider lock-in | AgentOrchestration library supports Gemini/OpenAI/Claude |
 | No structured logging | .NET structured logging + InvocationId tracing |
 
-**Next:** [06 — Configuration Reference](06-configuration.md) documents every setting in one page.
+**Next:** [06 — Configuration Reference](07-configuration.md) documents every setting in one page.

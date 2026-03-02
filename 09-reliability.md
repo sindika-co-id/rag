@@ -1,4 +1,4 @@
-# 08 — Reliability
+# 09 — Reliability
 
 The Gateway implements a resilience pipeline using Polly to handle transient failures, enforce timeouts, and prevent overloading external services.
 
@@ -142,4 +142,4 @@ The system is designed to support circuit breaker patterns but does not currentl
 | Per-provider rate limiting | Different LLM APIs have different quotas |
 | No circuit breaker yet | Single-provider setup doesn't benefit; add when multi-provider |
 
-**Next:** [09 — Troubleshooting](09-troubleshooting.md) provides symptom-based diagnosis and solutions.
+**Next:** [09 — Troubleshooting](10-troubleshooting.md) provides symptom-based diagnosis and solutions.

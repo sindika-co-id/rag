@@ -11,14 +11,10 @@
             "id": "51ee77ed3444c511",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02-retrieval-pipeline.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "02-retrieval-pipeline"
+              "title": "New tab"
             }
           }
         ]
@@ -185,14 +181,51 @@
   },
   "active": "51ee77ed3444c511",
   "lastOpenFiles": [
+    "sedYLB8wp",
+    "sedaFOA4E",
+    "sed1sXbqe",
+    "sedpYUzwW",
+    "sedbMVkWK",
+    "sedLuWifW",
+    "seduQUxyp",
+    "sedSc8ViT",
+    "sedZjQ3o7",
+    "01-concepts.md",
+    "02-retrieval-pipeline.md",
+    "02-ingestion-pipeline.md",
+    "03-retrieval-pipeline.md",
+    "04-generation-pipeline.md",
+    "05-application.md",
+    "06-data-flow.md",
+    "07-configuration.md",
+    "08-observability.md",
+    "09-reliability.md",
+    "10-troubleshooting.md",
+    "11-example-hello-rag.md",
+    "12-example-ingestion.md",
+    "13-example-query.md",
+    "14-example-customization.md",
+    "backup/06-Tutorial.md",
+    "backup/00-Introduction.md",
+    "backup/05-Operasional.md",
+    "backup/04-Konfigurasi.md",
+    "backup/03-Migrasi.md",
+    "backup/02-Application.md",
+    "backup/01-Komponen-Teknis.md",
+    "backup/image/02-Application/nvidia-smi-1456mb.png",
+    "backup/image/02-Application/docker-compose-up.jpg",
+    "backup/image/02-Application/6-irrelevant-chat-bot-confused.jpg",
+    "backup/image/02-Application/5-relevant-chat-bot-answers.jpg",
+    "backup/image/02-Application/4-ingest-done.jpg",
+    "backup/image/02-Application/2-upload-file.jpg",
+    "backup/image/02-Application/3-ingesting-file.jpg",
+    "backup/image/02-Application/1-streamlit-view.jpg",
+    "backup/image/02-Application/0-application-architecture.jpg",
+    "backup/image/00-Introduction/semantic-route.png",
+    "backup/image/02-Application",
+    "backup/image/00-Introduction",
     "01-ingestion-pipeline.md",
     "00-overview.md",
-    "05-data-flow.md",
-    "06-configuration.md",
-    "04-application.md",
-    "03-generation-pipeline.md",
-    "02-retrieval-pipeline.md",
-    "08-reliability.md",
-    "07-observability.md"
+    "05-data-flow.md"
   ]
 }

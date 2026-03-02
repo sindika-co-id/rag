@@ -1,4 +1,4 @@
-# 07 — Observability
+# 08 — Observability
 
 This document covers structured logging across all three components and debugging techniques for common scenarios.
 
@@ -150,4 +150,4 @@ Open `http://localhost:6333/dashboard` in a browser to inspect:
 | No centralized log aggregation | Keeps the system simple; add ELK/Grafana when scaling |
 | Correlation via ConversationId | Trace a single user conversation across Gateway ↔ Worker |
 
-**Next:** [08 — Reliability](08-reliability.md) covers retry, timeout, and rate limiting.
+**Next:** [08 — Reliability](09-reliability.md) covers retry, timeout, and rate limiting.

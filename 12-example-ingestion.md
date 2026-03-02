@@ -1,4 +1,4 @@
-# 11 — Example: Ingestion Walkthrough
+# 12 — Example: Ingestion Walkthrough
 
 A detailed look at what happens when a PDF is uploaded and processed. This example traces the ingestion pipeline step by step.
 
@@ -186,4 +186,4 @@ curl -X DELETE http://localhost:8080/api/reset
 | **Batch processing** | Embedding and upsert run in batches of 20 |
 | **Idempotent re-upload** | Same content = skip; modified content = replace |
 
-**Next:** [12 — Example: Query](12-example-query.md) traces a question through the retrieval pipeline.
+**Next:** [12 — Example: Query](13-example-query.md) traces a question through the retrieval pipeline.

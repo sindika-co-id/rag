@@ -1,4 +1,4 @@
-# 10 — Example: Hello RAG
+# 11 — Example: Hello RAG
 
 The smallest working flow — from zero to your first AI-generated, document-grounded answer.
 
@@ -182,4 +182,4 @@ Check that the system is working end-to-end:
 | **End-to-end flow** | Upload → Parse → Chunk → Embed → Search → Generate → Validate |
 | **Citations** | Every factual claim is backed by a source `[Sx]` |
 
-**Next:** [11 — Example: Ingestion](11-example-ingestion.md) dives deeper into the ingestion process.
+**Next:** [11 — Example: Ingestion](12-example-ingestion.md) dives deeper into the ingestion process.

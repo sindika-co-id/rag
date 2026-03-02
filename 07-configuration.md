@@ -1,4 +1,4 @@
-# 06 — Configuration Reference
+# 07 — Configuration Reference
 
 All system configuration is managed through four files. This document provides the complete reference for every setting.
 
@@ -168,4 +168,4 @@ volumes:
 openssl rand -hex 24
 ```
 
-**Next:** [07 — Observability](07-observability.md) covers structured logging and debugging.
+**Next:** [07 — Observability](08-observability.md) covers structured logging and debugging.

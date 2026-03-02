@@ -1,4 +1,4 @@
-# 09 — Troubleshooting
+# 10 — Troubleshooting
 
 This document provides symptom-based diagnosis and solutions for common issues. Follow the decision tree, then jump to the relevant section.
 
@@ -248,4 +248,4 @@ dotnet run
 | Health check endpoints | Quick automated verification of each component |
 | Separate ingestion/query troubleshooting | Different failure modes, different solutions |
 
-**Next:** [10 — Example: Hello RAG](10-example-hello-rag.md) walks through the smallest working flow from zero.
+**Next:** [10 — Example: Hello RAG](11-example-hello-rag.md) walks through the smallest working flow from zero.

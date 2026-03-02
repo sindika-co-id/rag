@@ -1,4 +1,4 @@
-# 13 — Example: Customization
+# 14 — Example: Customization
 
 This example demonstrates how to customize the RAG system's behavior by modifying configuration files. No code changes are required for most adjustments.
 

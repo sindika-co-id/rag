@@ -1,4 +1,4 @@
-# 02 — Retrieval Pipeline
+# 03 — Retrieval Pipeline
 
 The retrieval pipeline finds the most relevant document chunks for a given question. It runs on every query — from intent classification through hybrid search, fusion, and reranking.
 
@@ -197,4 +197,4 @@ flowchart TD
 | Two-stage retrieval | Fast embedding narrows 10K+ chunks to 48; slow cross-encoder refines to 5 |
 | Diversity filter | Prevents one long document from monopolizing all context slots |
 
-**Next:** [03 — Generation Pipeline](03-generation-pipeline.md) covers how the system generates answers from the retrieved context.
+**Next:** [03 — Generation Pipeline](04-generation-pipeline.md) covers how the system generates answers from the retrieved context.

@@ -1,4 +1,4 @@
-# 04 — Application
+# 05 — Application
 
 This document covers the project structure, the two-service architecture, how to set up the application, and a code tour of the key modules.
 
@@ -201,4 +201,4 @@ streamlit run streamlit_app.py
 | Qdrant as standalone Docker | Simple deployment, persistent volume, accessible dashboard |
 | Streamlit as optional UI | Rapid prototyping, not required for API-first usage |
 
-**Next:** [05 — Data Flow](05-data-flow.md) traces end-to-end request flows through both services.
+**Next:** [05 — Data Flow](06-data-flow.md) traces end-to-end request flows through both services.

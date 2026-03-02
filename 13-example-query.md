@@ -1,4 +1,4 @@
-# 12 — Example: Query Walkthrough
+# 13 — Example: Query Walkthrough
 
 A detailed look at what happens when a user asks a question. This example traces the retrieval and generation pipeline for different intent types.
 
@@ -168,4 +168,4 @@ data: {"type":"done","tokens":{"input":1200,"output":85}}
 | **Citation validation** | Every `[Sx]` tag is verified against source text |
 | **Streaming** | Sources arrive first, then answer tokens stream in real-time |
 
-**Next:** [13 — Example: Customization](13-example-customization.md) shows how to tune the system.
+**Next:** [13 — Example: Customization](14-example-customization.md) shows how to tune the system.

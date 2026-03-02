@@ -1,4 +1,4 @@
-# 01 — Ingestion Pipeline
+# 02 — Ingestion Pipeline
 
 The ingestion pipeline transforms raw PDF documents into searchable vectors stored in Qdrant. It runs once per document — before any questions are asked.
 
@@ -227,4 +227,4 @@ Each chunk is stored as a point in Qdrant:
 | Qdrant over ChromaDB | Production-grade performance, native hybrid search |
 | Deterministic document IDs | Content-based hashing enables duplicate detection and clean re-upload |
 
-**Next:** [02 — Retrieval Pipeline](02-retrieval-pipeline.md) covers how the system searches these vectors at query time.
+**Next:** [02 — Retrieval Pipeline](03-retrieval-pipeline.md) covers how the system searches these vectors at query time.
