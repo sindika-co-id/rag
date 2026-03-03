@@ -6,9 +6,17 @@ The ingestion pipeline transforms raw PDF documents into searchable vectors stor
 flowchart TD
     A["📄 PDF"] --> B["Docling Parser"]
     B --> C["Schema v2 Chunking"]
-    C --> D["Enrichment\n(Vision AI)"]
-    D --> E["BGE-M3 Embedding"]
+    
+    subgraph LLM_Enrichment [Enrichment Phase]
+        C --> D1["Vision AI (VLM)\nImage/Chart Description"]
+        C --> D2["Contextual Retrieval (LLM)\nDocument Contextualization"]
+    end
+    
+    D1 & D2 --> E["BGE-M3 Embedding"]
     E --> F[("Qdrant Vector DB")]
+
+    classDef llm fill:#f9f,stroke:#333,stroke-width:2px;
+    class D1,D2 llm;
 ```
 
 ---
@@ -105,13 +113,13 @@ flowchart TD
 
 ---
 
-## Enrichment: Vision AI & Contextual Retrieval
+## Enrichment: Generative AI (Vision AI & Contextual Retrieval)
 
-Enrichment adds **metadata and descriptions** to chunks that would otherwise be unsearchable.
+Enrichment menambahkan **metadata dan deskripsi** ke chunks yang tidak dapat dicari (*unsearchable*). Fase ini beroperasi *setelah chunking selesai, tetapi sebelum proses embedding.
 
-### Feature 1: Chart & Figure Description
+### Feature 1: Chart & Figure Description (Menggunakan VLM)
 
-Vision AI "sees" images in PDFs and produces text descriptions for search:
+Vision Language Model (VLM) "melihat" gambar/diagram dalam PDF dan menghasilkan deskripsi teks agar dapat dicari:
 
 | Provider | Type | Strengths | Weaknesses |
 |----------|------|-----------|------------|
@@ -119,27 +127,29 @@ Vision AI "sees" images in PDFs and produces text descriptions for search:
 | Qwen 2.5 VL | Local/Cloud | Open-weight, good multilingual support | Requires GPU (high VRAM) |
 | Ollama (LLaVA/Moondream) | Local CLI | Ultra lightweight, no internet | Lower accuracy on complex diagrams |
 
-### Feature 2: Flowchart Interpretation
+### Feature 2: Flowchart Interpretation (Menggunakan VLM)
 
-SOP documents often contain procedural flowcharts as images. Vision AI interprets arrow directions, decision nodes, and role handoffs — converting them to searchable narrative text.
+SOP document sering berisi flowchart prosedural dalam bentuk gambar. VLM menginterpretasikan arah panah, node keputusan, dan *role handoffs* — mengubahnya menjadi teks naratif yang dapat dicari.
 
-### Feature 3: Contextual Retrieval
+### Feature 3: Contextual Retrieval (Menggunakan LLM)
 
-Solves the "Lost-in-the-Middle" problem: a chunk saying `"Profit up 50%"` is useless without knowing *whose* profit, *which year*, *which chapter*.
+Menyelesaikan masalah "Lost-in-the-Middle": sebuah chunk berbunyi `"Keuntungan naik 50%"` menjadi tidak berguna tanpa mengetahui *keuntungan siapa*, *tahun berapa*, *bab apa*.
 
-**Solution:** A lightweight LLM reads the full document, generates a context summary, and stamps it onto every chunk as metadata:
+**Solusi:** Sebuah lightweight LLM membaca seluruh dokumen dari hasil parser (Markdown utuh), mem-*generate* ringkasan konteks singkat, dan **menempelkannya (stamping) ke seluruh chunks** sebagai metadata pelengkap:
 
-- **Without context:** `"Net profit increased 5% year-on-year"`
-- **With context:** `[CONTEXT: Q3 2024 Financial Report, PT Acme Corp, Chapter II Financial Performance] "Net profit increased 5% year-on-year"`
+- **Tanpa konteks:** `"Net profit increased 5% year-on-year"`
+- **Dengan konteks LLM:** `[CONTEXT: Q3 2024 Financial Report, PT Acme Corp, Chapter II Financial Performance] "Net profit increased 5% year-on-year"`
 
 ### Configuration
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
-| `ENABLE_PICTURE_DESCRIPTION` | `False` | Enable Vision AI for charts/figures |
-| `PICTURE_DESCRIPTION_MODEL` | `gemini-2.0-flash` | Vision model to use |
-| `PICTURE_DESCRIPTION_ONLY_CHARTS` | `True` | Only describe charts, not all images |
-| `ENABLE_TABLE_VISUAL_INTERPRETATION` | `False` | Enable flowchart interpretation |
+| `ENABLE_PICTURE_DESCRIPTION` | `False` | Enable VLM untuk charts/figures |
+| `PICTURE_DESCRIPTION_MODEL` | `gemini-2.0-flash` | VLM model yang digunakan |
+| `PICTURE_DESCRIPTION_ONLY_CHARTS` | `True` | Hanya mendeskripsikan charts |
+| `ENABLE_TABLE_VISUAL_INTERPRETATION`| `False` | Enable flowchart interpretation |
+| `ENABLE_CONTEXT_RETRIEVAL` | `True` | Enable Contextual Retrieval LLM |
+| `CONTEXTUAL_GENERATION_MODEL` | `Qwen-2.5-72B` | LLM model untuk membuat ringkasan |
 
 ---
 
