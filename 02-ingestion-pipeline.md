@@ -14,9 +14,6 @@ flowchart TD
     
     D1 & D2 --> E["BGE-M3 Embedding"]
     E --> F[("Qdrant Vector DB")]
-
-    classDef llm fill:#f9f,stroke:#333,stroke-width:2px;
-    class D1,D2 llm;
 ```
 
 ---
